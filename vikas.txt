@@ -1,0 +1,13 @@
+export PATH="$HOME/.local/bin:$PATH"
+
+streamlit run main.py --server.port 8000
+
+streamlit run main.py --server.address 0.0.0.0 --server.port 8000
+
+streamlit run app.py --server.address 0.0.0.0 --server.port 8000 --server.enableCORS=false
+
+
+pip freeze > requirements.txt
+
+
+nohup streamlit run app.py --server.address 0.0.0.0 --server.port 8000 --server.enableCORS=false > streamlit.log 2>&1 & 
